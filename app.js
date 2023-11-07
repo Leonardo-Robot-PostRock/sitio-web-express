@@ -9,8 +9,12 @@ app.set('view engine', 'hbs');
 //Servir contenido estático
 app.use(express.static('public'));
 
+//Controlador
 app.get('/', (req, res) => {
-	res.render('home');
+	res.render('home', {
+		nombre: 'Leonardo Puebla',
+		titulo: 'Aprendiendo Node'
+	});
 });
 
 app.get('/generic', (req, res) => {
