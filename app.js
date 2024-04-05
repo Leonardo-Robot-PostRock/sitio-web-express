@@ -1,8 +1,12 @@
 const express = require('express');
+var hbs = require('hbs');
+
 const app = express();
 const port = 8080;
 
-//TODO: require('hbs')
+// Handlebars
+hbs.registerPartials(__dirname + '/views/partials');
+
 app.set('view engine', 'hbs');
 
 //Middlewares
@@ -12,6 +16,21 @@ app.use(express.static('public'));
 //Controlador
 app.get('/', (req, res) => {
 	res.render('home', {
+		nombre: 'Leonardo Puebla',
+		titulo: 'Aprendiendo Node'
+	});
+});
+
+app.get('/generic', (req, res) => {
+	res.render('generic', {
+		nombre: 'Leonardo Puebla',
+		titulo: 'Aprendiendo Node'
+	});
+});
+
+
+app.get('/elements', (req, res) => {
+	res.render('elements', {
 		nombre: 'Leonardo Puebla',
 		titulo: 'Aprendiendo Node'
 	});
