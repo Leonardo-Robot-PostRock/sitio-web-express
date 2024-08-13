@@ -3365,6 +3365,7 @@
 
 			#header .logo span {
 				font-weight: 300;
+				display: block;
 				font-size: .8em;
 				color: #FFF;
 			}
